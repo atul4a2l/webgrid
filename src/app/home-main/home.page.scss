@@ -1,0 +1,22 @@
+.fullheight {
+  height: 100%;
+  background-color: #1d1e22;;
+}
+
+.xc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ion-toggle {
+  --background: #fff;
+  --background-checked: #fff;
+  --handle-max-height: 50px !important;
+  --handle-height: 50px !important;
+  --handle-width: 50px !important;
+  --handle-background: #f30a0a;
+  --handle-background-checked: #22fd05;
+  width: 100px;
+  height: 30px;
+}

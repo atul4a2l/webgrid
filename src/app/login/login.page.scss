@@ -1,0 +1,81 @@
+    // Fullscreen centered image background
+    ion-content {
+     --background: url('../../assets/img/background/background-1.jpg')no-repeat center center / cover;;
+    }
+    // Slider
+    .content-slider {
+      ion-slides,
+      .swiper-container {
+        height: 100%;
+        width: 100%;
+      }
+    }
+    .zoom .slide-zoom {
+      height: 100%;
+    }
+    Content
+    .scroll-content {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .logo {
+      width: 100%;
+      max-width: 19em;
+      height: auto;
+      margin: 0 auto 6px;
+    }
+    ion-row {
+      align-items: center;
+      text-align: center;
+    }
+    ion-col {
+      padding: 0 20px;
+    }
+
+    .login-button {
+      width: 100%;
+      max-width: 40rem;
+      height: 50px;
+      font-size: 1.2em;
+    }
+    .forgot-button {
+      font-weight: bold;
+      float: right;
+      ion-icon {
+        padding-left: 10px;
+        font-size: 2.2rem;
+      }
+    }
+    .goback-button {
+      font-weight: bold;
+      float: left;
+      ion-icon {
+        padding-right: 10px;
+        font-size: 2.2rem;
+      }
+    }
+    .slide-button {
+      margin-top: 4rem;
+      font-weight: bold;
+      ion-icon {
+        padding-left: 10px;
+        font-size: 2.2rem;
+      }
+    }
+    .position-bottom {
+      position: absolute;
+      left: 0;
+      bottom: 10px;
+      right: 0;
+      margin: 0 auto;
+      width: 200px;
+    }
+    .position-top {
+        position: absolute;
+        left: 0;
+        top: 10px;
+        right: 0;
+        margin: 0 auto;
+        width: 200px;
+      }

@@ -1,0 +1,82 @@
+<ion-content class="transparent-header">
+  <ion-slides #slider class="content-slider" [options]="slideOpts">
+    <ion-slide class="swiper-no-swiping">
+      <div class="padding">
+        <img class="logo" src="assets/img/logo/webgrid.png"/>
+        <ion-row>
+          <ion-col size="6">
+            <ion-button shape="round" color="light" class="login-button" (click)="goToLogin()">SIGN IN</ion-button>
+          </ion-col>
+          <ion-col size="6">
+            <ion-button shape="round" color="light" class="login-button" (click)="goToSignup()">SIGN UP</ion-button>
+          </ion-col>
+        </ion-row>
+      </div>
+    </ion-slide>
+    <ion-slide class="zoom swiper-no-swiping">
+      <ion-slides #innerSlider class="content-slider">
+        <ion-slide class="swiper-no-swiping">
+          <div class="padding">
+            <img class="logo" src="assets/img/logo/webgrid.png"/>
+            <form (submit)="onLogin(loginForm)" #loginForm="ngForm">
+            <ion-item>
+              <ion-label position="floating">Email</ion-label>
+              <ion-input type="email" name="email" ngModel #emailInput="ngModel" required email></ion-input>
+              <ion-note style="margin-bottom: 4px;" *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched)">Please enter a valid email.</ion-note>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Password</ion-label>
+              <ion-input type="password" name="password" ngModel #passwordInput="ngModel" required></ion-input>
+              <ion-note style="margin-bottom: 4px;" *ngIf="passwordInput.invalid && (passwordInput.dirty || passwordInput.touched)">Please enter a valid password.</ion-note>
+            </ion-item>
+            <ion-button expand="block" shape="round" type="submit" color="light" class="login-button">Log in</ion-button>
+            <ion-button fill="clear" (click)="slideNext()" color="light" class="forgot-button">FORGOT PASSWORD?</ion-button>
+          </form>
+          </div>
+          <ion-button fill="clear" color="light" (click)="goToSignup()" class="slide-button position-bottom">GO TO SIGNUP<ion-icon name="arrow-down"></ion-icon></ion-button>
+        </ion-slide>
+        <ion-slide class="swiper-no-swiping">
+          <div class="padding">
+            <img class="logo" src="assets/img/logo/webgrid.png"/>
+            <form (submit)="resetPassword(resetPswdForm)" #resetPswdForm="ngForm">
+            <ion-item>
+              <ion-label position="floating">E-mail</ion-label>
+              <ion-input type="email" name="email" ngModel #resetPswdInput="ngModel" required email></ion-input>
+              <ion-note style="margin-bottom: 4px;" *ngIf="resetPswdInput.invalid && (resetPswdInput.dirty || resetPswdInput.touched)">Please enter a valid email.</ion-note>
+            </ion-item>
+            <ion-button type="submit" expand="block" shape="round" color="light" class="login-button">RESET PASSWORD</ion-button>
+            <ion-button fill="clear" (click)="slidePrevious()" color="light" class="goback-button"><ion-icon name="arrow-back"></ion-icon> GO BACK</ion-button>
+          </form>
+          </div>
+        </ion-slide>
+      </ion-slides>
+    </ion-slide>
+    <ion-slide class="zoom swiper-no-swiping">
+      <ion-button fill="clear" color="light" (click)="goToLogin()" class="slide-button position-top">
+        GO TO LOGIN
+        <ion-icon name="arrow-up"></ion-icon>
+      </ion-button>
+      <div class="padding">
+        <img class="logo" src="assets/img/logo/webgrid.png"/>
+        <form (submit)="signup(createUserForm)" #createUserForm="ngForm">
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input type="email" name="email" ngModel #userEmail="ngModel" required email></ion-input>
+          <ion-note style="margin-bottom: 4px;" *ngIf="userEmail.invalid && (userEmail.dirty || userEmail.touched)">Please enter a valid email.</ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Password</ion-label>
+          <ion-input type="password" name="password" ngModel #password="ngModel" required></ion-input>
+          <ion-note style="margin-bottom: 4px;" *ngIf="password.invalid && (password.dirty || password.touched)">Password is required.</ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Confirm Password</ion-label>
+          <ion-input type="password" name="confirmPassword" ngModel #confirmPassword="ngModel" required></ion-input>
+          <ion-note style="margin-bottom: 4px;" *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)">Confirm password is required.</ion-note>
+        </ion-item>
+        <ion-button type="submit" expand="block" shape="round" color="light" class="login-button">SIGN UP</ion-button>
+      </form>
+      </div>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

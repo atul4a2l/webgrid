@@ -1,5 +1,7 @@
 {
   "name": "background location",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
